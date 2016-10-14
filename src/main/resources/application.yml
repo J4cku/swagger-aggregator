@@ -1,0 +1,20 @@
+spring:
+  profiles: default
+
+server:
+  port: 8080
+
+documentation:
+  swagger: 
+    services:   
+      - 
+        name: Service1
+        url: /service/api1
+        api: http://your-service1.domain/v2/api-docs
+        version: 2.0
+      - 
+        name: Service2
+        url: /service/api2
+        api: http://your-service2.domain/v2/api-docs
+        version: 2.0
+.0
