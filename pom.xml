@@ -23,6 +23,7 @@
 
         <lombok.version>1.16.8</lombok.version>
         <build.number>DEFAULT</build.number>
+        <git.commit>NONE</git.commit>
     </properties>
 
     <dependencies>
@@ -73,9 +74,12 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.10</version>
+                <version>0.4.13</version>
                 <configuration>
                     <imageName>${registry.name}/${project.artifactId}:${build.number}</imageName>
+                    <buildArgs>
+                        <GIT_COMMIT>${git.commit}</GIT_COMMIT>
+                    </buildArgs>
                     <dockerDirectory>docker</dockerDirectory>
                     <resources>
                         <resource>
